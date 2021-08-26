@@ -73,6 +73,9 @@ export default {
         this.$store.dispatch("register", payload);
         if (this.isUserRegistered) {
           this.$router.push({ path: "/login" });
+        }else{
+          this.error.status = true
+          this.error.mssg = 'Ya existe un usuario con este email'
         }
       }else{
         this.error.status = true
