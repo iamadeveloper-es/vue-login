@@ -37,12 +37,14 @@
           v-model="user.password"
         />
       </div>
+      <div v-if="error.status" class="error px-6 py-3 bg-red-500 rounded-md mt-10 text-white">{{error.mssg}}</div>
       <button class="px-6 py-3 bg-green-500 rounded-md mt-10 text-white" type="submit">Register</button>
     </div>
   </form-component>
 </template>
 
 <script>
+import Helpers from '../helpers'
 import { mapState } from "vuex";
 import FormComponent from "./FormComponent.vue";
 export default {
@@ -55,6 +57,10 @@ export default {
         email: "",
         password: "",
       },
+      error:{
+        status: false,
+        mssg: ''
+      }
     };
   },
   computed: {
@@ -63,12 +69,20 @@ export default {
   methods: {
     register() {
       let payload = this.user;
-      this.$store.dispatch("register", payload);
-      if (this.isUserRegistered) {
-        this.$router.push({ path: "/login" });
+      if(this.user.name != '' && this.user.lastName != '' && this.user.email != '' && this.user.password != ''){
+        this.$store.dispatch("register", payload);
+        if (this.isUserRegistered) {
+          this.$router.push({ path: "/login" });
+        }
+      }else{
+        this.error.status = true
+        this.error.mssg = 'Rellena todos los campos'
       }
     },
   },
+  mounted(){
+    Helpers.clearError('input', this.error)
+  }
 };
 </script>
 
