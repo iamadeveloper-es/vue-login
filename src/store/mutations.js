@@ -38,4 +38,7 @@ export default {
             state.isUserRegistered = true
         }
     },
+    LOG_OUT(state){
+        Auth.deleteUserLogged(state)
+    }
 }

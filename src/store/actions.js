@@ -17,4 +17,8 @@ export default {
     register({commit}, payload){
         commit('REGISTER', payload)
     },
+    logOut({commit}){
+        console.log('action')
+        commit('LOG_OUT')
+    }
 }

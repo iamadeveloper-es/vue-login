@@ -1,24 +1,31 @@
 <template>
   <div id="app">
+    <the-header></the-header>
     <main class="main">
-      <router-view/>
+      <router-view />
     </main>
   </div>
 </template>
 <script>
-import {mapActions} from 'vuex'
-export default{
-  methods:{
-    ...mapActions(['getAllUsers']),
+import { mapActions } from "vuex";
+import TheHeader from './components/TheHeader.vue';
+export default {
+  components:{
+    TheHeader
   },
-  created(){
-    this.getAllUsers()
-  }
-}
+  methods: {
+    ...mapActions(["getAllUsers"]),
+  },
+  created() {
+    this.getAllUsers();
+  },
+};
 </script>
 <style>
-body{
-  background-color: #CDFAF1;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+body {
+  background-color: #cdfaf1;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 </style>
