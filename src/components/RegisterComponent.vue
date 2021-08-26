@@ -37,6 +37,19 @@
           v-model="user.password"
         />
       </div>
+      <div class="form-group">
+        <select
+         class="w-full border-gray-100 rounded-md h-14"
+         v-model="user.role"
+        >
+          <option disabled value="">Select a role</option>
+          <option 
+            v-for="role in userRoles"
+            :key="role"
+            :value="role"
+          >{{role}}</option>
+        </select>
+      </div>
       <div v-if="error.status" class="error px-6 py-3 bg-red-500 rounded-md mt-10 text-white">{{error.mssg}}</div>
       <button class="px-6 py-3 bg-green-500 rounded-md mt-10 text-white" type="submit">Register</button>
     </div>
@@ -56,7 +69,9 @@ export default {
         lastName: "",
         email: "",
         password: "",
+        role: ""
       },
+      userRoles: ['patient', 'doctor'],
       error:{
         status: false,
         mssg: ''
@@ -69,7 +84,7 @@ export default {
   methods: {
     register() {
       let payload = this.user;
-      if(this.user.name != '' && this.user.lastName != '' && this.user.email != '' && this.user.password != ''){
+      if(this.user.name != '' && this.user.lastName != '' && this.user.email != '' && this.user.password != '' && this.user.role != ''){
         this.$store.dispatch("register", payload);
         if (this.isUserRegistered) {
           this.$router.push({ path: "/login" });

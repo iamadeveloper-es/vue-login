@@ -22,6 +22,19 @@
           v-model="user.password"
         />
       </div>
+      <div class="form-group">
+        <select
+         class="w-full border-gray-100 rounded-md h-14"
+         v-model="user.role"
+        >
+          <option disabled value="">Select a role</option>
+          <option 
+            v-for="role in userRoles"
+            :key="role"
+            :value="role"
+          >{{role}}</option>
+        </select>
+      </div>
       <div v-if="error.status" class="error px-6 py-3 bg-red-500 rounded-md mt-10 text-white">{{error.mssg}}</div>
       <button class="px-6 py-3 bg-green-500 rounded-md mt-10 text-white" type="submit">Login</button>
       <div class="link">
@@ -41,8 +54,10 @@ export default {
       return{
           user:{
               email: '',
-              password: ''
+              password: '',
+              role: ''
           },
+          userRoles: ['patient', 'doctor'],
           error:{
             status: false,
             mssg: ''
@@ -54,8 +69,8 @@ export default {
   },
   methods:{
     login(){
-      const {email, password} = this.user
-      if(email != '' && password != ''){
+      const {email, password, role} = this.user
+      if(email != '' && password != '' && role != ''){
         let payload = this.user
         this.$store.dispatch('login', payload) 
         if(this.isUserLogged){

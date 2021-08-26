@@ -22,6 +22,22 @@
         "email": "eperrier@gmail.com",
         "password": "epe15",
         "role": "patient"
+    },
+    {
+        "id": 4,
+        "name": "Mónica",
+        "lastName": "García",
+        "email": "mgarcia@gmail.com",
+        "password": "mgarcia15",
+        "role": "doctor"
+    },
+    {
+        "id": 5,
+        "name": "Michael",
+        "lastName": "Jordan",
+        "email": "mjordan@gmail.com",
+        "password": "mjordan15",
+        "role": "doctor"
     }
     
 ]

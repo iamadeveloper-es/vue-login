@@ -5,8 +5,8 @@ export default {
     },
     LOGIN(state, payload){
         Auth.deleteUserLogged(state)
-        const {email, password} = payload
-        const findUser = state.users.find(user => user.email === email && user.password === password)
+        const {email, password, role} = payload
+        const findUser = state.users.find(user => user.email === email && user.password === password && user.role === role)
         if(findUser != null){
             state.user = findUser
             Auth.setUserLogged(state, payload)
@@ -18,9 +18,9 @@ export default {
 
     },
     REGISTER(state, payload){
-        const {name, lastName, email, password} = payload
+        const {name, lastName, email, password, role} = payload
         const findUser = state.users.find(user => user.email === email)
-        if(name === '' || lastName === '' || email === '' || password === '' || findUser != null){
+        if(name === '' || lastName === '' || email === '' || password === '' || role === '' || findUser != null){
             state.isUserRegistered = false
             return
         }
@@ -32,7 +32,7 @@ export default {
                     lastName: lastName,
                     email: email,
                     password: password,
-                    role: 'patient'
+                    role: role
                 }
             )
             state.isUserRegistered = true
