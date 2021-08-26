@@ -16,6 +16,28 @@ const routes = [
     }
   },
   {
+    path: '/patient',
+    name: 'Patient',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PatientView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/doctor',
+    name: 'Doctor',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/DoctorView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
     path: '/login',
     name: 'Login',
     // route level code-splitting

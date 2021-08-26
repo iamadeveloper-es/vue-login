@@ -6,12 +6,27 @@
 
 <script>
 // @ is an alias to /src
-
+import {mapState} from 'vuex'
 export default {
   name: 'Home',
-  components: {
-    
+  computed:{
+    ...mapState(['user'])
   },
+  methods:{
+    handleRoutesByRole(){
+      switch(this.user.role){
+        case 'patient':
+          this.$router.push({path: '/patient'})
+        break;
+        case 'doctor':
+          this.$router.push({path: '/doctor'})
+        break;
+      }
+    }
+  },
+  created(){
+    this.handleRoutesByRole()
+  }
   
 }
 </script>
