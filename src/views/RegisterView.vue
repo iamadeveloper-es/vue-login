@@ -1,5 +1,7 @@
 <template>
-  <register-component></register-component>
+  <div class="container mx-auto">
+    <register-component></register-component>
+  </div>  
 </template>
 
 <script>

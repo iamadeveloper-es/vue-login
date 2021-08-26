@@ -3,31 +3,29 @@
   :formTitle="'Login'"
   @submitEmitter="login()"
   >
-    <div slot="form-fields">
+    <div slot="form-fields" class="space-y-4">
       <div class="form-group">
-        <label for="email">Email</label>
         <input
+          class="w-full border-gray-100 rounded-md h-14"
           type="email"
-          placeholder="email"
+          placeholder="Email"
           id="email"
           v-model="user.email"
         />
       </div>
-      <br />
       <div class="form-group">
-        <label for="password">Password</label>
         <input
+          class="w-full border-gray-100 rounded-md h-14"
           type="text"
-          placeholder="password"
+          placeholder="Password"
           id="password"
           v-model="user.password"
         />
       </div>
-      <br />
-      <div v-if="error.status" class="error">{{error.mssg}}</div>
-      <button type="submit">Login</button>
+      <div v-if="error.status" class="error px-6 py-3 bg-red-500 rounded-md mt-10 text-white">{{error.mssg}}</div>
+      <button class="px-6 py-3 bg-green-500 rounded-md mt-10 text-white" type="submit">Login</button>
       <div class="link">
-        <p>¿No tienes una cuenta? registrate <router-link to="/register">aquí</router-link></p>
+        <p>¿No tienes una cuenta? registrate <router-link to="/register" class="text-blue-400">aquí</router-link></p>
       </div>
     </div>
   </form-component>

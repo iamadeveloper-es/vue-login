@@ -1,5 +1,7 @@
 <template>
-  <login-component></login-component>
+  <div class="container mx-auto">
+    <login-component></login-component>
+  </div>
 </template>
 
 <script>
