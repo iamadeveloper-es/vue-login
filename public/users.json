@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "David",
+        "lastName": "Smith",
+        "email": "david@gmail.com",
+        "password": "15ab",
+        "role": "patient"
+    },
+    {
+        "id": 2,
+        "name": "Eva",
+        "lastName": "Mitchels",
+        "email": "eva@gmail.com",
+        "password": "abgr",
+        "role": "patient"
+    },
+    {
+        "id": 3,
+        "name": "Evans",
+        "lastName": "Perrier",
+        "email": "eperrier@gmail.com",
+        "password": "epe15",
+        "role": "patient"
+    }
+    
+]
