@@ -6,13 +6,11 @@
         "email": "david@gmail.com",
         "password": "15ab",
         "role": "patient",
+        "doctor": 5,
         "appointments": [
             {
                 "date": "22-03-2022",
-                "hour": "19:15",
-                "doctor": {
-                    "id": 5
-                }
+                "hour": "19:15"
             }
         ],
         "vaccines": null,
@@ -29,13 +27,11 @@
         "email": "eva@gmail.com",
         "password": "abgr",
         "role": "patient",
+        "doctor": 5,
         "appointments": [
             {
                 "date": "02-01-2022",
-                "hour": "08:20",
-                "doctor": {
-                    "id": 5
-                }
+                "hour": "08:20"
             }
         ],
         "vaccines": [
@@ -64,15 +60,11 @@
         "email": "eperrier@gmail.com",
         "password": "epe15",
         "role": "patient",
+        "doctor": 5,
         "appointments": [
             {
                 "date": "22-03-2022",
-                "hour": "19:15",
-                "doctor": {
-                    "id": 5,
-                    "name": "Michael",
-                    "lastName": "Jordan"
-                }
+                "hour": "19:15"
             }
         ],
         "vaccines": [

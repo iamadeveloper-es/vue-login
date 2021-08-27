@@ -29,10 +29,31 @@ const routes = [
   {
     path: '/doctor',
     name: 'Doctor',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/DoctorView.vue'),
+    component: () => import('../views/DoctorView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/appointments',
+    name: 'Appointments',
+    component: () => import('../views/PatientsViews/AppointmentsView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/vaccines',
+    name: 'Vaccines',
+    component: () => import('../views/PatientsViews/VaccinesView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/medication',
+    name: 'Medication',
+    component: () => import('../views/PatientsViews/MedicationView.vue'),
     beforeEnter(to, from, next){
       isUserLogged(to, from, next)
     }
@@ -40,10 +61,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    component: () => import('../views/LoginView.vue')
   },
   {
     path: '/register',
