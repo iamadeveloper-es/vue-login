@@ -40,5 +40,9 @@ export default {
     },
     LOG_OUT(state){
         Auth.deleteUserLogged(state)
+    },
+    GET_DOCTOR_BY_ID(state, payload){
+        const findDoctor = state.users.find(user => user.role === 'doctor' && user.id === payload)
+        state.doctor = findDoctor
     }
 }

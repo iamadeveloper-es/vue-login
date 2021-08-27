@@ -11,8 +11,11 @@
     "
     v-click-outside="hideMenu"
   >
-    <div class="logo cursor-pointer">
+    <div class="logo flex items-center cursor-pointer"
+    @click="homeRoute()"
+    >
         <md-icon class="md-size-2x">medical_services</md-icon>
+        <span class="ml-2 mt-2 text-lg">Medical App</span>
     </div>
     <div class="user" v-if="isUserLogged">
       <div
@@ -62,6 +65,13 @@ export default {
         if(!this.isUserLogged){
             this.$router.push({path: '/login'})
         }
+    },
+    homeRoute(){
+      if(!this.isUserLogged){
+        return
+      }else{
+        this.$router.push({path: '/'})
+      }
     }
   },
   directives: {

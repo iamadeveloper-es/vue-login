@@ -1,15 +1,17 @@
 <template>
   <section class="section patient">
     <div class="container mx-auto">
-      <h1 class="text-5xl">Paciente {{user.name}}</h1>
-      <div class="flex mt-5">
+      <h1 class="text-5xl">Paciente {{`${user.name} ${user.lastName}`}}</h1>
+      <div class="md:flex mt-5">
         <div
           class="
             w-full
             md:w-1/2
             bg-green-500
             py-6
-            m-4
+            md:m-3
+            mb-4
+            md:mb-0
             text-center text-white
             rounded-md
             cursor-pointer

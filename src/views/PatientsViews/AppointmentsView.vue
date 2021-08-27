@@ -7,9 +7,10 @@
     ></empty-task>
     <div class="section">
       <div class="container">
-        <div class="grid grid-cols-3 gap-4">
+        <h1 class="text-5xl">Próximas Citas</h1>
+        <div class="grid md:grid-cols-3 gap-4 mt-5">
           <div v-for="(appointment, index) in user.appointments" :key="index" 
-            class="p-4 text-base bg-blue-300 rounded-md"
+            class="p-4 text-lg bg-green-300 rounded-md"
           >
             <div class="date">
               <span class="text-gray-600">Fecha: </span>
@@ -21,7 +22,7 @@
             </div>
             <div class="doctor mt-4">
               <span class="text-gray-600">Doctor: </span>
-              <span>{{ appointment.date }}</span>
+              <span>{{`${doctor.name} ${doctor.lastName}`}}</span>
             </div>
           </div>
         </div>
@@ -31,14 +32,17 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState} from "vuex";
 import EmptyTask from "../../components/EmptyTask.vue";
 export default {
   components: { EmptyTask },
   computed: {
     ...mapState(["user"]),
-    ...mapGetters(["getDoctorById", this.user.doctor])
+    ...mapState(['doctor'])
   },
+  mounted(){
+    this.$store.dispatch("getDoctorById", this.user.doctorId)
+  }
 };
 </script>
 

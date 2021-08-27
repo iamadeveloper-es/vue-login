@@ -6,17 +6,29 @@
         "email": "david@gmail.com",
         "password": "15ab",
         "role": "patient",
-        "doctor": 5,
+        "doctorId": 5,
         "appointments": [
             {
                 "date": "22-03-2022",
                 "hour": "19:15"
             }
         ],
-        "vaccines": null,
-        "medication": [
+        "vaccines": [],
+        "medications": [
             {
-                "name": "paracetamol 1g"
+                "name": "paracetamol 1g",
+                "prescription" : "1 cada 8 horas"
+            },
+            {
+                "name": "ibuprfeno 1g",
+                "prescription" : "1 cada 8 horas"
+            },
+            {
+                "name": "champú dermatitis"
+            },
+            {
+                "name": "jarabe tusil",
+                "prescription" : "1 cucharada al día"
             }
         ]
     },
@@ -27,7 +39,7 @@
         "email": "eva@gmail.com",
         "password": "abgr",
         "role": "patient",
-        "doctor": 5,
+        "doctorId": 5,
         "appointments": [
             {
                 "date": "02-01-2022",
@@ -36,20 +48,21 @@
         ],
         "vaccines": [
             {
-                "covid": {
-                    "date" : "12-09-2021",
-                    "hour": "10:20",
-                    "dose": "first"
-                },
-                "cold": {
-                    "date" : "12-11-2021",
-                    "hour": "12:38"
-                }
+                "name": "covid",
+                "date" : "12-09-2021",
+                "hour": "10:20",
+                "dose": "first"
+            },
+            {
+                "name": "gripe",
+                "date" : "12-09-2021",
+                "hour": "10:20"
             }
         ],
-        "medication": [
+        "medications": [
             {
-                "name": "paracetamol 1g"
+                "name": "paracetamol 1g",
+                "prescription" : "1 cada 8 horas"
             }
         ]
     },
@@ -60,7 +73,7 @@
         "email": "eperrier@gmail.com",
         "password": "epe15",
         "role": "patient",
-        "doctor": 5,
+        "doctorId": 4,
         "appointments": [
             {
                 "date": "22-03-2022",
@@ -69,15 +82,15 @@
         ],
         "vaccines": [
             {
-                "cold": {
-                    "date" : "12-11-2021",
-                    "hour": "12:38"
-                }
+                "name": "gripe",
+                "date" : "12-11-2021",
+                "hour": "12:38"
             }
         ],
-        "medication": [
+        "medications": [
             {
-                "name": "paracetamol 1g"
+                "name": "paracetamol 1g",
+                "prescription" : "1 cada 8 horas"
             }
         ]
     },
