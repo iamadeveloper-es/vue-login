@@ -18,11 +18,12 @@ export default {
         commit('REGISTER', payload)
     },
     logOut({commit}){
-        console.log('action')
         commit('LOG_OUT')
     },
     getDoctorById({commit}, payload){
-        console.log(payload)
         commit('GET_DOCTOR_BY_ID', payload)
+    },
+    getPatients({commit}, payload){
+        commit('GET_PATIENTS', payload)
     }
 }

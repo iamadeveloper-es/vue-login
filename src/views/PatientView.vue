@@ -38,17 +38,17 @@ export default {
     return {
       options: [
         {
-          name: "Appointments",
+          name: "Citas",
           icon: "event",
           path: "appointments",
         },
         {
-          name: "Vaccines",
+          name: "Vacunación",
           icon: "vaccines",
           path: "vaccines",
         },
         {
-          name: "Medication",
+          name: "Medicación",
           icon: "medication",
           path: "medication",
         },

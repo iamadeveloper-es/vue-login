@@ -10,7 +10,13 @@
         "appointments": [
             {
                 "date": "22-03-2022",
-                "hour": "19:15"
+                "hour": "19:15",
+                "description": "dolor de cabeza intenso"
+            },
+            {
+                "date": "02-12-2022",
+                "hour": "14:15",
+                "description": "revisión de brazo fracturado"
             }
         ],
         "vaccines": [],
@@ -43,7 +49,8 @@
         "appointments": [
             {
                 "date": "02-01-2022",
-                "hour": "08:20"
+                "hour": "08:20",
+                "description": "dolor de tripa"
             }
         ],
         "vaccines": [
@@ -73,11 +80,12 @@
         "email": "eperrier@gmail.com",
         "password": "epe15",
         "role": "patient",
-        "doctorId": 4,
+        "doctorId": 5,
         "appointments": [
             {
                 "date": "22-03-2022",
-                "hour": "19:15"
+                "hour": "19:15",
+                "description": "falta de visión, ojo derecho"
             }
         ],
         "vaccines": [

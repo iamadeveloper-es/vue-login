@@ -44,5 +44,14 @@ export default {
     GET_DOCTOR_BY_ID(state, payload){
         const findDoctor = state.users.find(user => user.role === 'doctor' && user.id === payload)
         state.doctor = findDoctor
+    },
+    GET_PATIENTS(state, payload){
+        state.patients = []
+        return state.users.filter((user) => {
+            if(user.role === 'patient' && user.doctorId === payload){
+                return state.patients.push(user)
+            }
+        })
+        
     }
 }

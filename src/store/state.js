@@ -3,5 +3,6 @@ export default {
     users: [],
     isUserLogged: false,
     isUserRegistered: false,
-    doctor: {}
+    doctor: {},
+    patients: []
 }

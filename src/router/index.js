@@ -27,14 +27,6 @@ const routes = [
     }
   },
   {
-    path: '/doctor',
-    name: 'Doctor',
-    component: () => import('../views/DoctorView.vue'),
-    beforeEnter(to, from, next){
-      isUserLogged(to, from, next)
-    }
-  },
-  {
     path: '/appointments',
     name: 'Appointments',
     component: () => import('../views/PatientsViews/AppointmentsView.vue'),
@@ -54,6 +46,30 @@ const routes = [
     path: '/medication',
     name: 'Medication',
     component: () => import('../views/PatientsViews/MedicationView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/doctor',
+    name: 'Doctor',
+    component: () => import('../views/DoctorView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/doctor-appointments',
+    name: 'Doctor-Appointments',
+    component: () => import('../views/DoctorViews/DoctorAppointmentsView.vue'),
+    beforeEnter(to, from, next){
+      isUserLogged(to, from, next)
+    }
+  },
+  {
+    path: '/doctor-patients',
+    name: 'Doctor-Patients',
+    component: () => import('../views/DoctorViews/DoctorpatientsView.vue'),
     beforeEnter(to, from, next){
       isUserLogged(to, from, next)
     }
